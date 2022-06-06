@@ -309,6 +309,282 @@
                 <!-- Fin de la rangée -->
 
                 <hr>
+
+                <div class="row">
+                    <div class="col-sm-12 px-4">
+                        <h2 class="text-center"><u>6- Les types de données</u></h2>
+                        <p>Dans PHP, il n'existe pas de déclaration explicite du type d'une variable lors de sa création. Même PHP 7 reste un langage pauvrement typé comparé à Java ou au C.</p>
+                    </div><!-- Fin de la colonne -->
+                    <div class="col-sm-12">
+                        <h5>Les types de base:</h5>
+                        <ul>
+                            <li>Entiers, avec le type integer, qui permet de représenter les nombres entiers dans les bases 10, 8 et 16.</li>
+                            <li>Flottants, avec le type double ou float, au choix, qui représentent les nombres réels, ou plutôt décimaux au sens mathématique. </li>
+                            <li>Chaînes de caractères, avec le type string.</li>
+                            <li>Booléens, avec le type boolean, qui contient les valeurs de vérité TRUE ou FALSE (soit les valeurs 1 ou 0 si on veut les afficher).</li>
+                        </ul>
+                        <h5>Les types composés:</h5>
+                        <ul>
+                            <li>Tableaux, avec le type array, qui peut contenir plusieurs valeurs.</li>
+                            <li>Objets, avec le type object.</li>
+                        </ul>
+                        <h5>Les types spéciaux</h5>
+                        <ul>
+                            <li>Objets, avec le type object.</li>
+                            <li>Type null.</li>
+                        </ul>
+                    </div>
+                </div> <!-- Fin de la row -->
+
+                <div class="row">
+                    <div class="col-sm-12 md-9">
+                        <h3 class="text-center">A. Les opérateurs numériques</h3>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Opérateurs</th>
+                                    <th scope="col">Description</th>
+                                </tr>
+                                <tbody>
+                                <tr>
+                                    <th scope="row">+</th>
+                                    <td>Addition</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">-</th>
+                                    <td>Soustraction</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">*</th>
+                                    <td>Multiplication</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">/</th>
+                                    <td>Division</td>
+                                </tr>
+                                <tr>
+                                <th scope="row">**</th>
+                                <td>Puissance (associatif à droite)<br>
+                                    $a=3;<br>
+                                    echo $a**2; //Affiche 9<br>
+                                    echo $a**2**4; //Affiche 43046721 soit 3**(2**4) ou 3**16</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">%</th>
+                                    <td>Modulo: reste de la division euclidiène du premier opérande par le deuxième. Fonctionne aussi sur des opérandes décimaux. Dans ce cas, PHP ne tient compte que des parties entières de chaque opérandes.
+
+                                    <?php
+                                        $var = 159;
+                                        echo "<br> <div class=' alert alert-success w-50'>La variable \$var contient " . $var . "<br> le résultat du modulo de $var%7 = ". $var%7 . "</div>";
+                                    ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                <th scope="row">--</th>
+                                <td>Décrémentation : soustrait une unité à la variable. Il existe deux possibilités, la prédécrémentation, qui soustrait avant d'utiliser la variable, et la postdécrémentation, qui soustrait après avoir utilisé la variable.<br>
+                                <?php
+                                $var=56;
+                                echo "<br> <div class=' alert alert-success w-50'>La variable \$var contient " . $var-- . "<br> le résultat de la postdécrémentation de \$var-- = ". $var . "</div>";
+                                echo "<br> <div class=' alert alert-success w-50'>La variable \$var contient " . $var-- . "<br> le résultat de la prédécrémentation de --\$var = ". $var . "</div>";  
+                                ?>
+                                </tr>
+                                <tr>
+                                <th scope="row">++</th>
+                                <td>Incrémentation : soustrait une unité à la variable. Il existe deux possibilités, la préincrémentation, qui soustrait avant d'utiliser la variable, et la postincrémentation, qui soustrait après avoir utilisé la variable.<br>
+                                <?php
+                                $var=56;
+                                echo "<br> <div class=' alert alert-success w-50'>La variable \$var contient " . $var++ . "<br> le résultat de la postincrémentation de \$var++ = ". $var . "</div>";
+                                echo "<br> <div class=' alert alert-success w-50'>La variable \$var contient " . $var++ . "<br> le résultat de la préincrémentation de ++\$var = ". $var . "</div>";  
+                                ?>
+                                </tr>
+                                </td>
+                                </tr>
+                                </tbody>
+                            </thead>
+                        </table>
+                    </div><!-- Fin de la colonne (col) -->
+                    <div class="col-sm-12">
+                        <h3>B. le type booléen</h3>
+                        <p>Le type booléen ne peut contenir que deux valeurs différentes soit FALSE (0) ou TRUE (1), c'est un système binaire.</p>
+
+                        <?php
+                            $a = 89;
+                            $b = ($a<100);
+                            echo "<p class=' alert alert-success'>La variable \$a est-elle inférieure à 100? La réponse est " . $b . "</p>";
+                        ?>
+                        <p>Ici la variable $b nous renvoie le booléen 1 qui signifie vrai. Dans le cas où la variable doit renvoyer un booléen faux (FALSE), il yaura une chaîne vide à la place de 0.</p>
+                    </div>
+                    <div class="col-sm-12">
+                        <h3 class="text-center">C. les opérateurs booléens</h3>
+                        <p>Quand ils sont associés, les opérateurs booléens servent à écrire des expressions simples ou complexes, qui sont évaluées par une valeur booléenne TRUE ou FALSE. Ils seront utilisés dans les instructions conditionnelles.</p>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Opérateur</th>
+                                    <th scope="col">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">==</th>
+                                    <td>
+                                        Teste l'égalité de deux valeurs. L'expression $a == $b vaut TRUE si la valeur de $a est égale à celle de $b et FALSE dans le cas contraire: <br>
+                                        $a = 345;<br>
+                                        $b = "345";<br>
+                                        $c = ($a==$b);<br>
+                                        $c est un booléen qui vaut TRUE car dans un contexte de comparaison numérique, la chaîne "345" est évaluée comme le nombre 345. Si $b = "345 éléphants" nous obtenons le même résultat.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">!= ou <></th>
+                                    <td>Teste l'inégalité de deux valeurs. <br>
+                                    L'expression $a != $b vaut TRUEsi la valeur de $a est différente de celle de $b et FALSE dans le cas contraire.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">===</th>
+                                    <td>
+                                        Teste l'identité des valeurs et des types de deux expressions.<br>
+                                        Lexpression $a === $b vaut TRUE si la valeur de $a est égale à celle de $b mais à condition que ces deux valeurs aient le même type (integer, string, boolean, etc...). Elle vaut FALSE dans le cas contraire <br>
+                                        $a = 345;<br>
+                                        $b = "345";<br>
+                                        $c = ($a===$b);<br>
+                                        $c est un booléen qui vaut FALSE car si les valeurs sont égales, les types sont différents (integer et string).
+                                    </td>
+                                </tr>
+                                <tr>
+                                <th scope="row">!==</th>
+                                <td>Teste la non-identité de deux expressions. <br>
+                            L'expression $a !== $b vaut TRUE si la valeur de $a est différente de celle de $b et que leur type sont différents. Dans le cas contraire elle vaut FALSE <br>
+                            $a = 345;<br>
+                            $b = "345";<br>
+                            $c = ($a!==$b);<br>
+                            $c est un booléen qui vaut TRUE car si les valeurs sont égales, les types sont différents (integer et string).            
+                            </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">&lt;</th>
+                                <td>
+                                    Teste si le premier opérande est strictement inférieur au second.
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">&lt;=</th>
+                                <td>
+                                    Teste si le premier opérande est inférieur ou égal au second.
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">&gt;</th>
+                                <td>
+                                    Teste si le premier opérande est strictement supérieur au second.
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">&gt;=</th>
+                                <td>
+                                    Teste si le premier opérande est supérieur ou égal au second.
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">=></th>
+                                <td>
+                                    Avec $a=>$b, retourne -1, 0 ou 1 respectivement si $a<$b ou $a>$b, $a=$b ($a et $b peuvent être des chaînes)
+                                </td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Fin de la colonne -->
+                    <div class="col-sm-12">
+                        <h3 class="text-center">D. Les opérateurs logiques</h3>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Opérateurs</th>
+                                    <th scope="col">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">OR</th>
+                                    <td>Teste si au moins l'un des opérants a la valeur TRUE: <br>
+                                        $a=true; <br>   
+                                        $b=false; <br>
+                                        $c=false; <br>
+                                        $d=($a OR $b); // $d vaut TRUE <br>
+                                        $e=($b OR $c); // $e vaut FALSE
+                                    </td>
+                                </tr>
+                               <tr>
+                                    <th scope="row">||</th>
+                                    <td>Equivaut à l'opérateur OR mais n'a pas la même priorité <br>
+                                </tr> 
+                                <tr>
+                                    <th scope="row">XOR</th>
+                                    <td>Teste si un et un seul des opérants a la valeur TRUE: <br>
+                                        $a=true; <br>   
+                                        $b=true; <br>
+                                        $c=false; <br>
+                                        $d=($a XOR $b); // $d vaut FALSE <br>
+                                        $e=($b XOR $c); // $e vaut TRUE
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">AND</th>
+                                    <td>Teste si les deux opérants valent TRUE en même temps: <br>
+                                        $a=true; <br>   
+                                        $b=true; <br>
+                                        $c=false; <br>
+                                        $d=($a AND $b); // $d vaut TRUE <br>
+                                        $e=($b AND $c); // $e vaut FALSE
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">&&</th>
+                                    <td>Equivaut à l'opérateur AND mais n'a pas la même priorité <br>
+                                </tr>
+                                <tr>
+                                    <th scope="row">!</th>
+                                    <td>Opérateur de négation, qui inverse la valeur de l'opérande:<br>
+                                        $a=true; <br>   
+                                        $b=false; <br>
+                                        $c=!$a; // $c vaut FALSE<br>
+                                        $d=!$b; // $d vaut TRUE 
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>Attention, une erreur classique dans l'ecriture des expressions conditionnelles consiste à confondre l'opérateur de comparaison == avec l'opérateur d'affectation = <br>L'usage des parenthèses dans la rédaction des expressions booléennes est souvent indispensable et toujours recommandé pour éviter les problèmes liés à l'ordre d'évaluation des opérateurs.</p>
+                    </div>
+                    <!-- Fin de la colonne -->
+                    
+                </div>
+                <!-- Fin de la row -->
+                
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3 class="text-center">E. Les chaînes de caractères</h3>
+                        <p>Les chaînes de caractères sont, avec les nombres, les types de données les plus manipulées sur un site web. De surcroit, dans les échanges entre le client et le serveur au moyen de formulaires, toutes les données sont transmises sous forme de chaînes, d'où leur importance. </p>
+                        <p>Une chaîne de caractères est une suite de caractères alphanumériques contenue entre des guillemets simples (apostrophes) ou doubles. Si une chaîne contient une variable, celle-ci est évaluée et sa valeur est incorporée à la chaîne uniquement si vous utilisez des guillements et non des apostrophes. <br></p>
+                        <?php
+                            $vartest = "coucou";
+                            echo "<p class=' alert alert-success w-50 text-center mx-auto'>Je dis $vartest !</p>";
+                            var_dump($vartest); //var_dump affiche les infos structurées d'une variable, y compris son type et sa valeur.
+                        ?>
+                         <ul>
+                            <li>$a = 'PHP';</li>
+                            <li>$b = 'MySQL';</li>
+                            <li>$c = "PHP et $b";//affiche : PHP et MySQL</li>
+                            <li>$d = 'PHP et $b'; //affiche PHP et $b car $ et b sont considérés comme des caractères sans signification particulière</li>
+                        </ul>
+                        <?php
+                            $devise = "La devise de la République Française est : \"Liberté, Égalité, Fraternité\"";
+                            echo "<p class=\"alert alert-success w-50 text-center mx-auto\">".$devise."!</p>"
+                        ?>
+                    </div>
+                </div>
                 
             </main>
         </div>
