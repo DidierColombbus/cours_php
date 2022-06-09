@@ -18,7 +18,7 @@
     <!-- mes styles -->
     <link rel="stylesheet" href="../css/style.css">
 </head>
-<body class="bg-dark">
+<body class="bg-light">
     <!-- JUMBOTRON -->
     <div class="jumbotron bg-dark text-white text-center">
         <h1 class="display-3">Cours PHP7 - Premier exercice</h1>
@@ -59,12 +59,12 @@
                                 // echo "<p>" . $_GET['article']. " - " . $_GET['couleur']. " <br> " . $_GET['prix'] . "€</p>";
                                 echo "
                                 <div class=\"card text-center\">
-                                <div class=\"card-header\">
+                                <div class=\"card-header text-dark\">
                                     À la Une !
                                 </div>
                                 <div class=\"card-body\">
-                                    <h3 class=\"card-title\">" . $_GET['article'].  " " . $_GET['couleur']. "</h3>
-                                    <p class=\"card-text\">Découvrez nos vêtements de qualité en matière 100% naturelle et recyclables. Des questions ? N'hésitez pas à nous contacter, nous sommes disponibles 7j/7 et 24h/24.</p>
+                                    <h3 class=\"card-title text-dark\">" . $_GET['article'].  " " . $_GET['couleur']. "</h3>
+                                    <p class=\"card-text text-dark\">Découvrez nos vêtements de qualité en matière 100% naturelle et recyclables. Des questions ? N'hésitez pas à nous contacter, nous sommes disponibles 7j/7 et 24h/24.</p>
                                     <a href=\"#\" class=\"btn btn-primary\">Ajoutez au panier</a>
                                 </div>
                                 <div class=\"card-footer text-muted\">
