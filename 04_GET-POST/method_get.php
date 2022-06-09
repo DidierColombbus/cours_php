@@ -40,13 +40,14 @@ require_once('../inc/functions.php')
         <!-- Contenu principal -->
         <!-- ============================================================== -->
         <div class="col-sm-8">
-        <?php
-                $x = "8";
-                jevar_dump($x);
-            ?>
             <main class="container-fluid">
                 <div class="row">
-                
+                    <hr>
+                    <h2 class="col-sm-12 text-center" id="definition"><u>1- Introduction</u></h2>
+                    <div class="col-sm-12 col-md-6">
+                        <p>Il s'agit d'une superglobale et comme toutes les superglobales c'est un tableau. Superglobale signifie que c'est une variable disponible partout dans le script, y compris au sein des fonctions. Les informations transitent dans l'URL selon la syntaxe suivante: <code>mapage.php?indice1=valeur1&indiceN=valeurN;</code></p>
+                        <p>Quand on récupère les données $_GET fabrique un tableau selon le schéma suivant: <code>$_GET = array('indice1' => 'valeur1','indiceN => valeurN');</code></p>
+                    </div>
                     
                 </div>
             </main>
