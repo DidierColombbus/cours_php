@@ -30,7 +30,6 @@ require_once('../inc/functions.php')
         <hr>
         <p class="lead bg-light">$_GET [] représente les données qui transitent par l'URL.</p>
     </div>
-
     <!-- RANGEE PRINCIPALE -->
     <div class="row bg-light">
         <!-- La barre de navigation en include (penser à toujours ajouter le JS en fin de page)    --->
@@ -41,8 +40,13 @@ require_once('../inc/functions.php')
         <!-- Contenu principal -->
         <!-- ============================================================== -->
         <div class="col-sm-8">
+        <?php
+                $x = "8";
+                jevar_dump($x);
+            ?>
             <main class="container-fluid">
                 <div class="row">
+                
                     
                 </div>
             </main>

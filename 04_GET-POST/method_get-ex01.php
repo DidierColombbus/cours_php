@@ -44,6 +44,11 @@
                     <span></span>
                 </button>
 
+                <?php
+                    $x = "8";
+                    jevar_dump($x);
+                ?>
+
                 <div class="row">
                     <hr>
                     <h2 class="col-sm-12 text-center" id="definition">1 - Tableau créé par la variable $_GET[]</h2>
