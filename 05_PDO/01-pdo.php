@@ -130,6 +130,66 @@
 
 
                     </div>
+                    <!-- fin de colonne -->
+                    <div class="col-sm-12">
+                        <h2 class="text-center"><span>4-</span>Faire des requêtes avec <code>query()</code> et afficher plusieurs résultats</h2>
+                        <?php
+                            $requete = $pdoENT->query("SELECT * FROM employes ORDER BY prenom");
+                            // jevar_dump($requete);
+                            // $ligne=$requete->fetchAll(PDO::FETCH_ASSOC);
+                            // jevar_dump($ligne);
+                            $nbr_employes = $requete->rowCount();
+                            // Cette méthode rowCount() permet de compterle nombre d'enregistrements retournés par la requête
+                            // jevar_dump($nbr_employes);
+                            echo"<p>Il y a " . $nbr_employes . " employés dans notre BDD.</p>";
+
+                            // comme nous avons plusieurs résultats dans $requete nous devons faire une boucle pour les parcourir
+                            // dans ce cas là fetch() va chercher la ligne suivante du jeu de résultat à chaque tour de boucle et le transforme en objet. La boucle while permet de faire avancer le curseur dans l'objet. Quand il arrive à la fin, fetch() retourne FALSE et la boucle s'arrète
+                            
+                            echo "<ul>";
+                            while($ligne = $requete->fetch(PDO::FETCH_ASSOC)){
+                                echo "<li>" .$ligne['prenom']." - ".$ligne['nom']." - ".$ligne['sexe']." - ".$ligne['service']." - ".$ligne['date_embauche']." - ".$ligne['salaire']. " €</li>";
+
+                            }
+                            echo "</ul>";
+
+                            // Exo afficher la liste des différents services dans une ul en mettant un service par li
+
+                        //     $requete = $pdoENT->query("SELECT distinct service FROM employes");
+
+                        //     echo "<ul>";
+                        //     while($ligne = $requete->fetch(PDO::FETCH_ASSOC)){
+                        //         echo "<li>".$ligne['service']."<br> </li>";
+                        //    }
+                        //     echo "</ul>";
+
+                            $requete = $pdoENT->query("SELECT DISTINCT (service) FROM employes ORDER BY service");
+                            $nbr_services=$requete->rowCount();
+
+                            echo "<div class='bg-info rounded w-50 text-white mt-4 mx-auto'>";
+                            echo "<p class='p-2 text-white'>Il y a " .$nbr_services. " services dans l'entreprise: </p>";
+                            echo "</div>";
+
+                            echo "<div class='border border-info rounded w-50 pt-3 mx-auto'>";
+
+                            echo "<ul>";
+                            while($ligne=$requete->fetch(PDO::FETCH_ASSOC)){
+                                echo "<li>".$ligne['service']."</li>";
+                            }
+                            echo "</ul>";
+                            echo "</div>";
+
+                            // <!-- EXO 1/ dans un h2, compter le nombre d'employés
+                            // 2/ puis afficher toutes les informations des employés dans un tableau HTML triés par ordre alphabétique de nom
+
+                            $requete = $pdoENT->query("SELECT * FROM employes ORDER BY id_employes");
+                            $nbr_employes = $requete->rowCount();
+
+                            echo "<br><br><h2><span>Exo.</span> Il y a " .$nbr_employes. " employés dans la société.</h2>";
+
+
+                        ?>
+                    </div>
                     
 
                 </div> <!-- Fin de la rangée -->
