@@ -9,8 +9,8 @@
         $langue =($_COOKIE['langue']);
         // jevar_dump($langue);
     }else{ // on saisit une langue par défaut
-        $langue ='FR';
-        jeprint_r($langue);
+        $langue ='fr';
+        // jeprint_r($langue);
     }
 
     // Envoi du cookie avec l'info sur la langue à l'intérieur
@@ -46,7 +46,7 @@
     <!-- JUMBOTRON -->
     <div class="jumbotron bg-dark text-white text-center">
         <h1 class="display-3">Cours PHP7 - Cookies</h1>
-        <p class="lead">La variable "$pdo" est un objet qui représente la connexion à une BDD.</p>
+        <p class="lead">La superglobale $_COOKIE: un cookie est un petit fichier de 4ko maximum déposé par le serveur web sur le poste de l'internauteet qui contient des informations.</p>
     </div>
 
     <!-- RANGÉE PRINCIPALE -->
@@ -66,7 +66,21 @@
                     <hr>
                     <h2 class="col-sm-12 text-center" id="definition">1. Introduction</h2>
                     <div class="col-sm-12">
-                        
+                        <p>Les cookies sont automatiquement renvoyés au serveur web par le navigateur. Lorsque l'internaute navigue dans les pages concernées par le ou les cookies  PHP permet de récupérer très facilement les données contenues dans un cookie. Non seuleemnt on peut le fabriquer mais on peut aussi le récupérer. Les informations sont stockées dans une superglobale $_COOKIE.</p>
+                        <p class="alert alert-danger w-50 mx-auto">Un cookie étant sauvegardé sur le poste de l'internaute il peut être modifié, détourné ou volé! On n'y met aucune information sensible, comme les références bancaires, numéro de sécurité sociale, mot de passe, ni même le contenu d'un panier d'achat./p>
+                            <div class="w-75 text-center mx-auto">
+                                <!-- On envoie la langue choisie par l'URL: la valeur "Fr" par exemple est récupérée dans la superglobale $_GET -->
+                                <a href="?langue=fr" class="btn btn-success">Français</a> - 
+                                <a href="?langue=es" class="btn btn-success">Espagnol</a> - 
+                                <a href="?langue=it" class="btn btn-success">Italien</a> - 
+                                <a href="?langue=ru" class="btn btn-success">Russe</a>
+
+                            <br><br>
+                                <?php 
+                                echo "<h3>Langue du site :  $langue</h3>";
+                                echo time() . " : la date du jour exprimée en secondes depuis le 1er janvier 1970."
+                            ?> 
+                            </div>
                     </div>
                 </div>
                 <hr>
