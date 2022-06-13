@@ -252,6 +252,30 @@
 
                             echo "<hr>";
 
+                            $sexe = 'f';
+                            $requete = $pdoENT->prepare("SELECT * FROM employes WHERE sexe = :sexe");
+                            $requete->bindParam(':sexe', $sexe);
+                            $requete->execute();
+                            $nombre_employes = $requete->rowCount();
+                            echo "<ul>";
+                            while ($ligne = $requete->fetch(PDO::FETCH_ASSOC)){
+                                echo "<li>Madame " . $ligne['prenom'] . " " . $ligne['nom'] . ", travaille au service " . $ligne['service'] . "</li>";
+                            }
+
+                            echo "</ul>"; 
+
+                            echo "<hr>";
+
+                            $resultat = $pdoENT->prepare("SELECT * FROM employes WHERE prenom = :prenom AND nom = :nom"); // préparation de la requête
+                            $resultat->execute(array(// on fabrique un tableau
+                                ':nom' => 'Thoyer',
+                                ':prenom' => 'Amandine' // on peut se passer de bindParam
+                            )); 
+                            // jevar_dump($resultat);
+                            $employe = $resultat->fetch(PDO::FETCH_ASSOC); // on va chercher les informations
+                            // jevar_dump($employe);
+                            echo "<p>" . $employe['prenom'] . " " . $employe['nom'] . " est au service " . $employe['service'];
+
                         ?>
 
                     </div>
