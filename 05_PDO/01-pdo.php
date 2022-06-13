@@ -185,7 +185,7 @@
                             $requete = $pdoENT->query("SELECT * FROM employes ORDER BY id_employes");
                             $nbr_employes = $requete->rowCount();
 
-                            echo "<br><br><h2><span>Exo.</span> Il y a " .$nbr_employes. " employés dans la société.</h2>";
+                            echo "<h2>Nous comptons " .$nbr_employes. " dans la société.</h2>";
 
 
                         ?>
