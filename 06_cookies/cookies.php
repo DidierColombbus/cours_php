@@ -37,7 +37,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap" rel="stylesheet">
 
-    <title>Cours PHP7 - Cookies</title>
+    <title>Cours PHP7 - $_COOKIE</title>
 
     <!-- mes styles -->
     <link rel="stylesheet" href="../css/style.css">
@@ -81,8 +81,10 @@
                                 echo time() . " : la date du jour exprimée en secondes depuis le 1er janvier 1970."
                             ?> 
                             </div>
-                    </div>
-                </div>
+                            
+                    </div> <!-- Fin de la colonne -->
+                </div> <!-- fin de la rangée -->
+                
                 <hr>
                 <br><br>
 
