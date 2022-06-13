@@ -26,6 +26,9 @@
     <!-- JUMBOTRON -->
     <div class="jumbotron bg-dark text-white text-center">
         <h1 class="display-3">Cours PHP7 - La variable $_SESSION</h1>
+        <p class="lead">Une session est un système mis en oeuvre dans le code PHP permettant de conserver sur le serveur, dans un fichier temporaire, des informations relatives à un internaute.
+        L'avantage d'une session c'est que les données seront enregistrées dans un fichier sur le serveur disponible et consultable sur l'ensemble des pages durant toute la navigation de l'internaute.
+        </p>
         
     </div>
 
@@ -67,13 +70,20 @@
                         <p>Pour supprimer automatiquement une session: <code>session_destroy();</code> Il supprime totalement la session ainsi que son fichier temporaire.</p>
 
                         <?php
-                            session_destroy();
-                            jeprint_r($_SESSION);
+                            // session_destroy();
+                            // jeprint_r($_SESSION);
                         ?>
 
                         <p>Nous avons effectué un session_destroy() mais il n'est exécuté qu'à la fin de notre script. Nous voyons encore ici le contenu de la session mais le fichier temporaire dans le dossier Temp a bien été supprimé. Ce fichier contient les infos de session et elles sont accessibles à <code>session_start()</code></p>
                         <p>Si on a besoin des informations de cette page, le code <code>session_start()</code> devra être placé au début de la page.</p>
 
+                        <?php
+                            if(isset($_SESSION['pseudo'])){
+                                echo "Votre pseudo est: " . $_SESSION['pseudo'] . "<br>";
+                            }else{
+                                echo "<form method='post' action=''><label for='pseudo'>Pseudo:</label><br><input type='text' name='pseudo' value=''><br><input type='submit' value='Envoyez'></form>";
+                            }
+                        ?>
 
                     </div>
                 </div>
