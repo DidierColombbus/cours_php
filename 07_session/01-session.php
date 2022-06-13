@@ -26,7 +26,7 @@
     <!-- JUMBOTRON -->
     <div class="jumbotron bg-dark text-white text-center">
         <h1 class="display-3">Cours PHP7 - La variable $_SESSION</h1>
-        <p class="lead">La méthode POST réceptionne les données d'un formulaire, $_POST est une superglobale.</p>
+        
     </div>
 
     <!-- RANGÉE PRINCIPALE -->
