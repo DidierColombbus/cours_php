@@ -182,21 +182,80 @@
                             // <!-- EXO 1/ dans un h2, compter le nombre d'employés
                             // 2/ puis afficher toutes les informations des employés dans un tableau HTML triés par ordre alphabétique de nom
 
-                            $requete = $pdoENT->query("SELECT * FROM employes ORDER BY id_employes");
+                            $requete = $pdoENT->query("SELECT * FROM employes ORDER BY nom");
                             $nbr_employes = $requete->rowCount();
 
-                            echo "<h2>Nous comptons " .$nbr_employes. " dans la société.</h2>";
+                            echo "<br><hr><br> <h2><span>Exo - <span>Nous comptons " . $nbr_employes . " employés.</h2>";
+
+                            echo"<table class='table table-dark table-stripped'>";
+                            echo "<thead><tr><th scope='col'>ID</th><th scope='col'>Prénom</th><th scope='col'>Nom</th><th scope='col'>Sexe</th><th scope='col'>Service</th><th scope='col'>Date d'embauche</th><th scope='col'>Salaire</th></tr></thead>";
+
+                            while($ligne = $requete->fetch(PDO::FETCH_ASSOC)){
+                                echo "<tr>";
+                                echo "<td># " . $ligne['id_employes'] . "</td>";
+                                echo "<td>";
+                                if($ligne['sexe'] == 'f'){
+                                    echo "Mme ";
+                                }else{
+                                    echo "M. ";
+                                }
+                                echo $ligne['prenom'] . "</td>";
+                                echo "<td>" . $ligne['nom'] . "</td>";
+                                echo "<td>" . $ligne['sexe'] . "</td>";
+                                echo "<td>" . $ligne['service'] . "</td>";
+                                echo "<td>" . $ligne['date_embauche'] . "</td>";
+                                echo "<td>" . $ligne['salaire'] . " € </td>";
+                                echo "</tr>";
+                            }
+
+                            echo "</table>";
 
 
                         ?>
-                    </div>
-                    
+                    </div><!-- Fin de la colonne -->
+                                   
 
                 </div> <!-- Fin de la rangée -->
                 
 
                 <hr>
                 <br><br>
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h2><span>5-</span> Requêtes préparées avec prepare()</h2>
+                        <p>Les requêtes préparées sont préconisées si vous exécutez plusieurs fois la même requête, ainsi vous éviterez au SGBD (système de gestion des bases de données) de répéter toutes les phrases, analyses, exécution... On gagne en performance.</p>
+                        <p>Elles sont aussi utiles pour nettoyer les données et se prémunir des injections de type SQL (tentatives de piratage, cf. 09_securite). Permet de renforcer la sécurité.</p>
+                        <p>Une requête préparée se réalise en 3 requêtes:</p>
+                        <ul>
+                            <li>On prépare la requête sans l'exécuter grâce à <code>prepare()</code> Ici: nom est un marqueur, une boîte vide et qui attend une valeur. $resultat est pour le moment un objet PDOstatement.</li>
+                            <li>On lie le marqueur à une variable $nom grâce à <code>bindParam()</code></li>
+                            <li>On va ensuite exécuter la requête grâce à <code>execute()</code></li>
+                        </ul>
+
+                        <?php
+                            $nom = 'Grand'; // ici j'ai l'info que je cherche dans une variable résultat ex. je cherche "Grand"
+                            //1. on prépare la requête
+                            $resultat = $pdoENT->prepare("SELECT * FROM employes WHERE nom = :nom"); 
+                            // a. prepare() permet de préparer la requête sans l'exécuter 
+                            // b. nom est un marqueur qui est vide (comme une boîte vide) et qui attend un valeur
+                            // c. $resultat est pour le moment un objet PSOstatement
+
+                            //2. on lie le marqueur
+                            $resultat->bindParam( ':nom', $nom );// bindParam permet de lier la marqueur à la variable :nom à une variable $nom on lie les paramètres
+                            // $resultat->bindValue( ':nom', 'titi' );// si on a besoin de lier le marqueur à une valeur fixe...
+                            // 3/ puis on exécute la requête
+                            $resultat->execute(); // permet d'exécuter toute la requête
+                            $employe = $resultat->fetch(PDO::FETCH_ASSOC);
+                            // jevar_dump($employe);	
+                            echo "<p class='alert alert-secondary'>Voici " . $employe['prenom'] . ' ' . $employe['nom']. ' - service: ' . $employe['service'] . '</p>';
+
+                            echo "<hr>";
+
+                        ?>
+
+                    </div>
+                </div>
 
             </main>
         </div>
