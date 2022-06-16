@@ -101,7 +101,7 @@
                                 $nbcomment = $requete->rowCount();
                                 echo "<p>Il y a " . $nbcomment . " commentaires dans la BDD.</p>";
 
-                                echo "<table class='table table-success table-hover table-stripped'>";
+                                echo "<table class='table table-success table-hover table-striped'>";
                                 echo "<thead><tr><th scope='col'>Pseudo</th><th scope='col'>Commentaire</th></tr></thead>";
     
                                 while($ligne = $requete->fetch(PDO::FETCH_ASSOC)){
