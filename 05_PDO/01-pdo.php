@@ -23,7 +23,7 @@
 <body class="bg-light">
     <!-- JUMBOTRON -->
     <div class="jumbotron bg-dark text-white text-center">
-        <h1 class="display-3">Cours PHP7 - PDO</h1>
+        <h1 class="display-3">Cours PHP2022 - PDO</h1>
         <p class="lead">La variable "$pdo" est un objet qui représente la connexion à une BDD.</p>
     </div>
 

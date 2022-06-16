@@ -83,12 +83,41 @@
                     $ligne = $requete->fetch(PDO::FETCH_ASSOC);
                     echo "<ul class='alert alert-success'><li>ID : " . $ligne['id_commentaire'] . "</li><li>Pseudo : " . $ligne['pseudo'] . "</li><li>Message : " . $ligne['message'] . "</li></ul>";             
                     ?>
-            </div>
+            </div> <!-- fin de la colonne -->
+           
             
                     
 
-                </div>
+                </div><!-- Fin de la rangée -->
+                
                 <hr>
+                    <div class="row">
+                        <h2 class="col-sm-12 terxt-center">2-Exercice</h2>
+                        <div class="col-sm-12">
+                            <p>Compter les commentaires de la BDD dialogue et les afficher dans un tableau.</p>
+                            <div class="alert alert-success">
+                                <?php
+                                $requete = $pdoDialogue->query("SELECT * FROM commentaire");
+                                $nbcomment = $requete->rowCount();
+                                echo "<p>Il y a " . $nbcomment . " commentaires dans la BDD.</p>";
+
+                                echo"<table class='table table-success table-hover table-stripped'>";
+                                echo "<thead><tr><th scope='col'>Pseudo</th><th scope='col'>Commentaire</th></tr></thead>";
+    
+                                while($ligne = $requete->fetch(PDO::FETCH_ASSOC)){
+                                    echo "<tr>";
+                                    echo "<td><strong>" . $ligne['pseudo'] . "</strong></td>";
+                                    echo "<td><i>" . $ligne['message'] . "</i></td>";
+                                    echo "</tr>";
+                                }
+    
+                                echo "</table>";
+                                    
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+
                 <br><br>
 
             </main>
