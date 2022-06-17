@@ -74,7 +74,7 @@
         <div class="row">
             <hr>
             <h2 class="col-sm-12 text-center">1- Tableau des employés</h2>
-            <div class="col-sm-12 container-fluid">
+            <div class="col-sm-12">
                 <?php
                     $requete = $pdoENT->query("SELECT * FROM employes ORDER BY prenom");
                     $nbr_employes = $requete->rowCount();
@@ -93,8 +93,8 @@
                             echo "<td>" . $ligne['sexe'] . "</td>";
                             echo "<td>" . $ligne['service'] . "</td>";
                             echo "<td>" . date('d/m/Y', strtotime($ligne['date_embauche'])) . "</td>";
-                            echo "<td>" . number_format($ligne['salaire'], 2, ',', ' ') . "€</td>";
-                            echo "<td><a href='03-fiche-employes.php?id_employes=".$ligne['id_employes']." class='text-white'>Voir sa fiche</a></td>"; 
+                            echo "<td>" . number_format($ligne['salaire'], 0, ',', ' ') . "€</td>";
+                            echo "<td><a href='03-fiche-employes.php?id_employes=".$ligne['id_employes']." class='text-white' target='_blank'>Voir sa fiche</a></td>"; 
                             echo "</tr>";
                     }
     
