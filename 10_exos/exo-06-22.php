@@ -234,7 +234,7 @@ function debug($param, $exit = 2)
  * ****************************************** III- TRAITEMENT **********************************************
  */
 // III-1. Vérifications du formulaire
-if($_POST){
+if(!empty ($_POST)){
 	// debug($_POST);
 
 	if (!isset($_POST['prenom']) || strlen($_POST['prenom']) < 2 || strlen($_POST['prenom']) > 20) $msg .= '<div class="alert alert-danger">Le prénom doit contenir entre 2 et 20 caractères.</div>';
