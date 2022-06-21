@@ -13,7 +13,7 @@
       $_POST['code_postal'] = htmlspecialchars($_POST['code_postal']);
       $_POST['ville'] = htmlspecialchars($_POST['ville']);
 
-      $requete = $pdoENT->prepare("INSERT INTO membre(pseudo, mdp, nom, prenom, email, civilite, adresse, code_postal, ville) VALUES (:pseudo, :mdp, :nom, :prenom, :email, :civilite, :adresse, :code_postal, :ville)"); 
+      $requete = $pdoSITE->prepare("INSERT INTO membre(pseudo, mdp, nom, prenom, email, civilite, adresse, code_postal, ville) VALUES (:pseudo, :mdp, :nom, :prenom, :email, :civilite, :adresse, :code_postal, :ville)"); 
 
       $requete->execute(array(
         ':pseudo' => $_POST['pseudo'],
@@ -27,6 +27,8 @@
         ':ville' => $_POST['ville'],
       ));
     }
+
+    // fin du if !empty
 ?>
 
 <!doctype html>
@@ -44,8 +46,8 @@
   <body>
       <main class="container bg-white m-4 mx-auto p-4">
         <div class="row">
-            <div class="col-sm-12 col-md-4">
-                <h1>La boutique</h1>
+            <div class="col-sm-12 col-md-9">
+                <h1>La boutique - Inscrivez-vous</h1>
             </div>
         </div>
 
