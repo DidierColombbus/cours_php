@@ -67,11 +67,36 @@
                   </div>
                   <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="mail" class="form-control" id="mail" name="mail" value="<?php echo $_POST['mail'] ??'';?>" required>
+                    <input type="email" class="form-control" id="mail" name="mail" value="<?php echo $_POST['mail'] ??'';?>" required>
                   </div>
+                  <div class="form-group">
+                    <label for="civilite">Genre</label>
+                    <select name="civilite" id="civilite" class="form-select">
+                      <option selected>Veuillez sélectionner un genre</option>
+                      <option value="f">Féminin</option>
+                      <option value="m">Masculin</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="adresse">Adresse</label>
+                    <input type="text" class="form-control" id="adresse" name="adresse" value="<?php echo $_POST['adresse'] ??'';?>" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="code_postal">Code postal</label>
+                    <input type="text" class="form-control" id="code_postal" name="code_postal" value="<?php echo $_POST['code_postal'] ??'';?>" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="ville">Ville</label>
+                    <input type="text" class="form-control" id="ville" name="ville" value="<?php echo $_POST['ville'] ??'';?>" required>
+                  </div>
+                  <input type="submit" class="btn btn-secondary my-2">
+                  <input type="reset" class="btn btn-secondary my-2">
+
+
                 </form>
             </div>
         </div>
+        <!-- Fin de la rangée -->
 
       </main>
     <!-- Bootstrap JavaScript Libraries -->
