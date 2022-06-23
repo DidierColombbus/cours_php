@@ -1,5 +1,5 @@
 <?php
-    require_once('./inc/init.php');
+    require_once('inc/init.php');
     jeprint_r($_SESSION);
 
     if(!empty($_POST)){
