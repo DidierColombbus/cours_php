@@ -11,7 +11,7 @@ function jeprint_r($mavariable){
 // 2- fonction pour éxécuter les prepare()
 
 function executeRequete($requete, $parametres = array()){
-    foreach($parametres as $indice => $valeur){
+    foreach ($parametres as $indice => $valeur){
         $parametres[$indice] = htmlspecialchars($valeur); // on évite les injections SQL
         global $pdoSITE; // global va nous permettre d'accéder à la variable $pdoSITE et de dire qu'elle devient globale
         $resultat = $pdoSITE->prepare($requete); // on prépare la requête
