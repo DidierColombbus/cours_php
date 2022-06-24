@@ -52,7 +52,7 @@
                     <!-- fermeture de la div -->
 
                     <div class="col-sm-12 col-lg-4">
-                        <p>PHP permet en outre de créer des pages interactives. Une page interactive permet à un visiteur de saisir des données personelles. Ces dernières sont ensuite transmises au serveur , où elles peuvent rester stockées dans une base de données pour être diffusées vers d'autres utilisateurs. Un visiteur peut par exemple , s'enregistrer et retrouver une page adaptée à ses besoins lors d'une visite ultérieure. Il peut aussi envoyer des e-mails et des fichiers sans avoir avoir à passer par son logiciel de messagerie. En associant toutes ces caracteristiques, il est possible de créer aussi bien des sites de diffusion et de collectes d'information que des sites d'e-commerces, de rencontres ou des blogs</p>
+                        <p>PHP permet en outre de créer des pages interactives. Une page interactive permet à un visiteur de saisir des données personelles. Ces dernières sont ensuite transmises au serveur, où elles peuvent rester stockées dans une base de données pour être diffusées vers d'autres utilisateurs. Un visiteur peut par exemple, s'enregistrer et retrouver une page adaptée à ses besoins lors d'une visite ultérieure. Il peut aussi envoyer des e-mails et des fichiers sans avoir avoir à passer par son logiciel de messagerie. En associant toutes ces caracteristiques, il est possible de créer aussi bien des sites de diffusion et de collectes d'information que des sites d'e-commerces, de rencontres ou des blogs</p>
                     </div>
                     <!-- fin de la div -->
                     <div class="col-sm-12 col-lg-4">
@@ -63,7 +63,7 @@
                 </div><!-- fin de la row -->
                 <div class="row">
                     <div class="col-sm-12 col-md-6">
-                        <p>Avec le code suivant s'écrit dans un fichier nommé info.php , placé dans le serveur d'évaluation, on obtient toutes les infos sur le PHP éxécuté dans ce serveur. <br>
+                        <p>Avec le code suivant s'écrit dans un fichier nommé info.php, placé dans le serveur d'évaluation, on obtient toutes les infos sur le PHP éxécuté dans ce serveur. <br>
                             <!-- <code><?php
                                         phpinfo();
                                         ?></code> -->
