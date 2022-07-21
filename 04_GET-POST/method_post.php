@@ -96,9 +96,9 @@
                     <?php
                         if(!empty($_POST)){// si $_POST n'est pas vide , c'est qu'il est rempli et donc que le formulaire a été envoyé, notez qu'en l'état on peut l'envoyer avec des champs vides, les valeurs des $_POST étant alors des strings vides. En effet on peut avoir des informations non obligatoires dans un formulaire et les input ne seront donc jamais remplis.
                             // jevardump($_POST);
-                            echo "<div class=\"alert alert-success w-100 mx-auto\"><p>Prénom: " .$_POST['prenom']. "</p>";
-                            echo "<p>Nom: " .$_POST['nom']. "</p>";
-                            echo "<p>Commentaire: " .$_POST['commentaire']. "</p></div>";
+                            echo "<div class=\"alert alert-success w-100 mx-auto\"><p>Prénom : " .$_POST['prenom']. "</p>";
+                            echo "<p>Nom : " .$_POST['nom']. "</p>";
+                            echo "<p>Commentaire : " .$_POST['commentaire']. "</p></div>";
 
                         }
                     ?>

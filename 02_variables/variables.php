@@ -679,7 +679,7 @@
                     </div><!-- Fin de la colonne -->
                     <div class="col-sm-12">
                     <h3 class="text-center">1 - Les tableaux associatifs</h3>
-                    <p>Dans un tableau associatif, nous pouvons choisir le nom des indices ou des index, c'est-à-dire que nous associaons un indice décidé par nous à une valeur.</p>
+                    <p>Dans un tableau associatif, nous pouvons choisir le nom des indices ou des index, c'est-à-dire que nous associons un indice décidé par nous à une valeur.</p>
 
                     <?php 
                         $couleurs = array(
